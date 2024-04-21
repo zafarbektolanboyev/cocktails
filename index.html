@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css">
+        <title>Cocktails | Home</title>
+    <script defer src="./app.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="nav-center">
+                    <a href="/"
+                        ><img
+                            src="./logo.svg"
+                            alt="cocktail db logo"
+                            class="logo"
+                    /></a>
+                    <ul class="nav-links">
+                        <li>home</li>
+                        <li>about</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="section search">
+                <form class="search-form">
+                    <div class="form-control">
+                        <label for="input">search your favorite cocktail</label
+                        ><input type="text" name="name" id="input" />
+                    </div>
+                </form>
+            </section>
+            <section class="section">
+                <h2 class="section-title">Cocktails</h2>
+                <div id="coctail" class="cocktails-center">
+                    <!-- <article class="cocktail">
+                        <div class="img-container">
+                            <img src="https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg" alt="A1">
+                        </div>
+                        <div class="cocktail-footer">
+                            <h3>A1</h3>
+                            <h4>Cocktail glass</h4>
+                            <p>Alcoholic</p>
+                            <a class="btn btn-primary btn-details" href="/cocktail/17222">details</a>
+                        </div>
+                    </article> -->
+                </div>
+                <div class="loader hidden"></div>
+            </section>
+        </main>
+    </body>
+</html>
