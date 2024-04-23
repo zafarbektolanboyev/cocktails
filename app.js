@@ -1,21 +1,21 @@
-function creatUi(data){
-    let card = document.createElement("cocktails-center");
-    card.classList.add("coctail");
+const coctailsCenter = document.querySelector(".coctails-center");
+const loader  = document.querySelector(".loader");
 
-    let coctailCard = `
-        <article id="coctailContent" class="cocktail">
-            <div class="img-container">
-                <img src="${data.imgSrc}" alt="A1">
-            </div>
-            <div class="cocktail-footer">
-                <h3>${data.title}</h3>
-                <h4>${data.title1}</h4>
-                <p>${data.desckription}</p>
-                <a class="btn btn-primary btn-details" href="/cocktail/17222">details</a>
-            </div>
-        </article>`;
-        card.innerHTML = coctailContent;
+fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
+    .then((res) => res.json())
+    .then((data) => {
+        loader.classList.add("hidden");
+        creatDrinks(data.drinks);
+});
 
-        return card;
+function creatDrinks(drinks){
+    drinks.forEach(
+        ({idDrink, strDrink, strGlass, strAlcoholic, strDrinkThumb}) =>{
+        const article = document.createElement("article");
+
+        article.classList.add("coctail")
+
+        article.innerHTML = `<div class="img-container"><img src=${strDrinkThumb} alt=${strDrink}></div><div class="cocktail-footer"><h3>${strDrink}</h3><h4>${strGlass}</h4><p>${strAlcoholic}</p><a class="btn btn-primary btn-details" href="./about.html?id=${idDrink}">details</a></div>`;
+        coctailsCenter.appendChild(article);
+    });
 }
-let cardContent = document.getElementById("coctail")
